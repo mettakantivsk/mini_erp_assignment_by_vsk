@@ -21,7 +21,9 @@ let startTheServer = async () => {
       driver: sqlite3.Database,
     });
 
-    app.listen(5000, () => console.log("server started!!"));
+    const PORT = process.env.PORT || 5000;
+
+    app.listen(PORT, () => console.log("server started!!"));
   } catch (error) {
     console.log(error);
     process.exit(1);
